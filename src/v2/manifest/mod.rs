@@ -369,6 +369,7 @@ mod tests {
             .unwrap()
             .to_string()
     }
+
     #[test_case(None => "application/vnd.docker.distribution.manifest.v2+json; q=0.5,application/vnd.docker.distribution.manifest.v1+prettyjws; q=0.4,application/vnd.docker.distribution.manifest.list.v2+json; q=0.5"; "Default settings")]
     #[test_case(Some(vec![
         (MediaTypes::ManifestV2S2, Some(0.5)),
