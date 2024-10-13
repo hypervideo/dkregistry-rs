@@ -12,7 +12,7 @@ exclude = [
 ".gitignore",
 ".travis.yml",
 ]
-edition = "2018"
+edition = "2021"
 
 [package.metadata.release]
 disable-publish = true
