@@ -19,17 +19,17 @@ jobs:
             experimental: true
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6.0.2
 
       - name: Install toolchain
-        uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@v1.0.7
         with:
           profile: minimal
           toolchain: ${{ matrix.rust }}
           override: true
 
       - name: Run cargo check
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@v1.0.3
         with:
           command: check
 
@@ -47,22 +47,22 @@ jobs:
             experimental: true
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6.0.2
 
       - name: Install stable toolchain
-        uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@v1.0.7
         with:
           profile: minimal
           toolchain: ${{ matrix.rust }}
           override: true
 
       - name: Run cargo test
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@v1.0.3
         with:
           command: test
 
       - name: Run cargo test (test-mock features)
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@v1.0.3
         with:
           command: test
           args: --features test-mock
@@ -81,10 +81,10 @@ jobs:
             experimental: true
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6.0.2
 
       - name: Install stable toolchain
-        uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@v1.0.7
         with:
           profile: minimal
           toolchain: ${{ matrix.rust }}
@@ -110,10 +110,10 @@ jobs:
             experimental: true
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6.0.2
 
       - name: Install toolchain
-        uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@v1.0.7
         with:
           profile: minimal
           toolchain: ${{ matrix.rust }}
@@ -121,13 +121,13 @@ jobs:
           components: rustfmt, clippy
 
       - name: Run cargo fmt
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@v1.0.3
         with:
           command: fmt
           args: --all -- --check
 
       - name: Run cargo clippy
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@v1.0.3
         with:
           command: clippy
           args: -- -D warnings
